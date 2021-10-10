@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Arkann">
         <activity
+            android:name=".EcoView"
+            android:exported="true" />
+        <activity
+            android:name=".EcoCodesList"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
