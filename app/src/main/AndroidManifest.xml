@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Arkann">
         <activity
+            android:name=".gamesList"
+            android:exported="true" />
+        <activity
+            android:name=".SettingsMain"
+            android:exported="true" />
+        <activity
+            android:name=".ImportInit"
+            android:exported="true" />
+        <activity
             android:name=".TreeFork"
             android:exported="true" />
         <activity

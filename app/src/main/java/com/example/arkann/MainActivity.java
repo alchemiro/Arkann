@@ -22,11 +22,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(treeIntent);
     }
     public void openImport(View view){
-        Intent importIntent=new Intent();
+        Intent importIntent=new Intent(this,ImportInit.class);
         startActivity(importIntent);
     }
     public void openSettings(View view){
-        Intent settingsIntent=new Intent();
+        Intent settingsIntent=new Intent(this,SettingsMain.class);
         startActivity(settingsIntent);
     }
 }
