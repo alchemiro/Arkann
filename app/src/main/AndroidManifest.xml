@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Arkann">
         <activity
+            android:name=".TreeFork"
+            android:exported="true" />
+        <activity
             android:name=".EcoView"
             android:exported="true" />
         <activity

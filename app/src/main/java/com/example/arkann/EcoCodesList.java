@@ -19,33 +19,33 @@ public class EcoCodesList extends AppCompatActivity {
         Button btn=new Button(this);
         btn.setId(i);
         if(i<100){
-            btn.setText("A"+i.toString());
+            btn.setText("A"+String.valueOf(i));
             if(i%100<10){
-                btn.setText("A0"+i.toString());
+                btn.setText("A0"+String.valueOf(i));
             }
         }
         else if(i<200){
-            btn.setText("B"+i.toString());
+            btn.setText("B"+String.valueOf(i));
             if(i%100<10){
-                btn.setText("B0"+i.toString());
+                btn.setText("B0"+String.valueOf(i));
             }
         }
         else if(i<300){
-            btn.setText("C"+i.toString());
+            btn.setText("C"+String.valueOf(i));
             if(i%100<10){
-                btn.setText("C0"+i.toString());
+                btn.setText("C0"+String.valueOf(i));
             }
         }
         else if (i<400){
-            btn.setText("D"+i.toString());
+            btn.setText("D"+String.valueOf(i));
             if(i%100<10){
-                btn.setText("D0"+i.toString());
+                btn.setText("D0"+String.valueOf(i));
             }
         }
         else{
-            btn.setText("E"+i.toString());
+            btn.setText("E"+String.valueOf(i));
             if(i%100<10){
-                btn.setText("E0"+i.toString());
+                btn.setText("E0"+String.valueOf(i));
             }
         }
         }
