@@ -2,6 +2,7 @@ package com.example.arkann;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -9,7 +10,11 @@ import android.widget.ScrollView;
 public class EcoCodesList extends AppCompatActivity {
     LinearLayout ll;
     ScrollView scrollView;
-
+    private View.OnClickListener ecoCodeListener=new View.OnClickListener(){
+      public void onClick(View view){
+        String ecoId=String.valueOf(view.getId());
+      }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,59 +33,51 @@ public class EcoCodesList extends AppCompatActivity {
             if (i < 100) {
                 String nameOpening="A" + String.valueOf(i);
                 btn.setText(nameOpening);
-                btn.setId(Integer.parseInt(nameOpening));
 
 
                 if (i % 100 < 10) {
                     nameOpening="A0" + String.valueOf(i);
                     btn.setText(nameOpening);
-                    btn.setId(Integer.parseInt(nameOpening));
 
                 }
             } else if (i < 200) {
                 String nameOpening="B" + String.valueOf(i%100);
                 btn.setText(nameOpening);
-                btn.setId(Integer.parseInt(nameOpening));
 
                 if (i % 100 < 10) {
                     nameOpening="B0" + String.valueOf(i%100);
                     btn.setText(nameOpening);
-                    btn.setId(Integer.parseInt(nameOpening));
 
                 }
             } else if (i < 300) {
                 String nameOpening="C" + String.valueOf(i%100);
                 btn.setText(nameOpening);
-                btn.setId(Integer.parseInt(nameOpening));
 
                 if (i % 100 < 10) {
                     nameOpening="C0" + String.valueOf(i%100);
                     btn.setText(nameOpening);
-                    btn.setId(Integer.parseInt(nameOpening));
 
                 }
             } else if (i < 400) {
                 String nameOpening="D" + String.valueOf(i%100);
                 btn.setText(nameOpening);
-                btn.setId(Integer.parseInt(nameOpening));
 
                 if (i % 100 < 10) {
                     nameOpening="D0" + String.valueOf(i%100);
                     btn.setText(nameOpening);
-                    btn.setId(Integer.parseInt(nameOpening));
 
                 }
             } else {
                 String nameOpening="E" + String.valueOf(i%100);
                 btn.setText(nameOpening);
-                btn.setId(Integer.parseInt(nameOpening));
                 if (i % 100 < 10) {
                     nameOpening="E0" + String.valueOf(i%100);
                     btn.setText(nameOpening);
-                    btn.setId(Integer.parseInt(nameOpening));
                 }
             }
+            btn.setOnClickListener(ecoCodeListener);
             ll.addView(btn, params);
         }
     }
+
 }
