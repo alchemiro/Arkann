@@ -10,5 +10,6 @@ public class EcoView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eco_view);
+        EcoDBManager ecoDb=new EcoDBManager(this);
     }
 }
