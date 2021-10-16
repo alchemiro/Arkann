@@ -1,6 +1,8 @@
 package com.example.arkann;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,10 +12,16 @@ import android.widget.ScrollView;
 public class EcoCodesList extends AppCompatActivity {
     LinearLayout ll;
     ScrollView scrollView;
+
     private View.OnClickListener ecoCodeListener=new View.OnClickListener(){
-      public void onClick(View view){
-        String ecoId=String.valueOf(view.getId());
-      }
+
+        @Override
+        public void onClick(View v) {
+            String ecoId=String.valueOf(v.getId());
+            Intent ecoIntent=new Intent(v.getContext(),EcoView.class);
+            ecoIntent.putExtra("id",ecoId);
+            startActivity(ecoIntent);
+        }
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +86,27 @@ public class EcoCodesList extends AppCompatActivity {
             btn.setOnClickListener(ecoCodeListener);
             ll.addView(btn, params);
         }
+        EcoDBManager ecoDBManager=new EcoDBManager(this);
+        SQLiteEcoHelper ecoHelper=new SQLiteEcoHelper(this);
+        ecoDBManager.open();
+        //beginning of eco code adds
+        //A00
+        if(!ecoDBManager.isExist(0)){
+            ecoHelper.addEco(
+                    "Irregular Openings",
+
+                    "Irregular openings are usually considered somewhat weaker than standard openings if both players play \"perfectly\". An element that many irregular openings share in common to their favor, however, is that many players have not studied the resulting positions in depth. As such, they can be a useful tool when played intentionally, similar to chess traps, to throw the other player off their preferred openings they've prepared for and played many times, and force the game onto a path that only the irregular opening player has studied. This advantage can offset the theoretical weakness; even if the other player avoids any direct blunders, they may be forced to spend time deriving the correct move through personal analysis, rather than instantly knowing the \"correct\" reply from a memorized opening book. In the same way, such strategies could be effective against older and weaker computer chess programs from the 1980s and 1990s: a chess program that heavily relied on memorized opening books from games of top players could be set adrift quickly by an irregular opening, and forced to calculate moves for itself. Such tactics no longer work on modern chess programs, however, which are significantly stronger."
+            );
+        }
+
+        if(!ecoDBManager.isExist(1)){
+            ecoHelper.addEco(
+                    "Irregular Openings",
+
+                    "Irregular openings are usually considered somewhat weaker than standard openings if both players play \"perfectly\". An element that many irregular openings share in common to their favor, however, is that many players have not studied the resulting positions in depth. As such, they can be a useful tool when played intentionally, similar to chess traps, to throw the other player off their preferred openings they've prepared for and played many times, and force the game onto a path that only the irregular opening player has studied. This advantage can offset the theoretical weakness; even if the other player avoids any direct blunders, they may be forced to spend time deriving the correct move through personal analysis, rather than instantly knowing the \"correct\" reply from a memorized opening book. In the same way, such strategies could be effective against older and weaker computer chess programs from the 1980s and 1990s: a chess program that heavily relied on memorized opening books from games of top players could be set adrift quickly by an irregular opening, and forced to calculate moves for itself. Such tactics no longer work on modern chess programs, however, which are significantly stronger."
+            );
+        }
+
     }
 
 }
